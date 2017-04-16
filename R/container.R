@@ -29,7 +29,7 @@ gce_check_container <- function(instance, container){
 #' 
 #' A configuration file must be less than 32768 characters.
 #' 
-#' \code{image_project} will be ignored if set, overriden to \code{cos-cloud}
+#' \code{image_project} will be ignored if set, overriden to \code{debian-cloud}
 #' 
 #' @seealso \url{https://cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance}
 #' 
@@ -37,7 +37,7 @@ gce_check_container <- function(instance, container){
 #' @export
 gce_vm_container <- function(file = NULL,
                              cloud_init = NULL, 
-                             image_family = "cos-stable", 
+                             image_family = "debian-8", 
                              ...){
   
   if(is.null(file)){
@@ -65,7 +65,7 @@ gce_vm_container <- function(file = NULL,
   dots$metadata <- NULL
   
   do.call(gce_vm_create, c(list(image_family = image_family,
-                                image_project = "cos-cloud",
+                                image_project = "debian-cloud",
                                 metadata = metadata_new), dots)
           )
   

@@ -145,7 +145,7 @@ gce_vm_template <- function(template = c("rstudio","shiny","opencpu",
                             dynamic_image=NULL,
                             dockerfile = NULL,
                             build_name = NULL,
-                            image_family = "cos-stable",
+                            image_family = "debian-8",
                             ...){
   
   dots <- list(...)
